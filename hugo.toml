@@ -1,0 +1,16 @@
+baseURL = "https://deepseekdl.com/"
+languageCode = "zh-CN"
+title = "DeepSeek下载指南"
+theme = "ananke"
+
+[params]
+  description = "DeepSeek 官方下载、安装教程、本地部署指南"
+  author = "DeepSeekDL"
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+
+[privacy]
+  [privacy.googleAnalytics]
+    disable = true
