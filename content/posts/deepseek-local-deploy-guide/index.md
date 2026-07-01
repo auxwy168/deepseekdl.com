@@ -10,6 +10,8 @@ description = "想在本地运行 DeepSeek 模型？本文详细对比 Ollama、
 
 想在本地跑一个 DeepSeek 模型？不为别的——隐私数据不离开你的机器、不用排队等 API 响应、也省得每个月给云端订阅续费。
 
+![Windows 终端中 Ollama 下载并运行 DeepSeek-R1 7B 模型的完整流程](/images/deepseek-local-deploy-guide-1.jpg)
+
 问题是：方案太多，选哪个？
 
 这篇文章会带你走一遍三种主流本地部署工具的实际操作流程。不写"概念科普"，全是能直接照着做的步骤。我们先从门槛最低的 Ollama 开始，再聊有图形界面的 LM Studio，最后给进阶用户讲讲 llama.cpp。
@@ -121,6 +123,8 @@ curl http://localhost:11434/api/generate -d '{
 
 如果之前用过其他本地部署方案，可以看看 [DeepSeek 客户端下载与安装指南](https://deepseekdl.com/deepseek-client-install/) 了解官方桌面端和本地模型的配合使用方式。
 
+![LM Studio 桌面应用界面：搜索 DeepSeek 模型、选择 Q4_K_M 量化版本并下载](/images/deepseek-local-deploy-guide-2.jpg)
+
 ## 方案二：LM Studio——不碰命令行的选择
 
 如果你看到终端就头疼，LM Studio 是你的菜。
@@ -222,6 +226,8 @@ hfd bartowski/DeepSeek-R1-Distill-Qwen-7B-GGUF --include "Q4_K_M"
 - **`-t 8`**：CPU 推理线程数，设成物理核心数
 - **`--mlock`**：锁定内存防止被 swap，避免突然卡顿
 - **`--no-mmap`**：如果模型在机械硬盘上，加这个避免随机读取拖慢速度
+
+![Ollama、LM Studio、llama.cpp 三种本地部署方案终端运行效果横向对比](/images/deepseek-local-deploy-guide-3.jpg)
 
 ## 三种方案横向对比
 
